@@ -1,6 +1,5 @@
 // --- Package Import --- //
 import React from 'react';
-import PropTypes from 'prop-types';
 
 // --- Material Ui Imports --- //
 import {
@@ -8,7 +7,6 @@ import {
   Box,
   Typography,
   ListItemAvatar as MuiListItemAvatar,
-  ListItemText,
   withStyles,
 } from '@material-ui/core';
 

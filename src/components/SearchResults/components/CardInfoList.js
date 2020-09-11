@@ -17,7 +17,7 @@ export default withStyles((theme) => ({
       flexDirection: 'column',
     },
 
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down(475)]: {
       flexDirection: 'column',
     },
   },
