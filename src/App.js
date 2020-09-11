@@ -10,6 +10,11 @@ import {
   operations as ListingOperations,
 } from 'store/Listing';
 
+// -- Material Ui --- //
+import { Container } from '@material-ui/core';
+// --- Components --- //
+import { SearchResults, SearchInput } from './components';
+
 /**
  * Main component for application
  */
@@ -23,11 +28,10 @@ function App() {
     }
   }, [dispatch, listing.status]);
   return (
-    <div className='App'>
-      {listing.list.map((house) => (
-        <p>{JSON.stringify(house)}</p>
-      ))}
-    </div>
+    <Container maxWidth='md'>
+      <SearchInput />
+      <SearchResults results={listing.list} status={listing.status} />
+    </Container>
   );
 }
 
