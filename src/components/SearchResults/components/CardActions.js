@@ -12,11 +12,10 @@ export default withStyles((theme) => ({
     display: 'flex',
     flexDirection: 'row',
     [theme.breakpoints.only('sm')]: {
-      flexWrap: 'wrap',
-      '& > :not(:first-child)': {
-        margin: 0,
-      },
+      flexDirection: 'column',
     },
-    [theme.breakpoints.down('xs')]: {},
+    [theme.breakpoints.down(400)]: {
+      flexDirection: 'column',
+    },
   },
 }))(CardActions);

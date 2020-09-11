@@ -18,6 +18,7 @@ import {
   CardActions,
   CardInfoList,
   CardInfoItem,
+  CardShowDetails,
 } from './components';
 
 const SearchResults = ({ results, status }) => {
@@ -84,7 +85,13 @@ const SearchResults = ({ results, status }) => {
             <Button component='a' href={results.detailsUrl} target='_blank'>
               View Details
             </Button>
-            <Button>Content Agent</Button>
+            <Button
+              component='a'
+              href={`mailto:${results.listingAgentEmail}`}
+              color='primary'
+            >
+              Contact {results.listingAgent.first} {results.listingAgent.last}
+            </Button>
           </CardActions>
         </CardContent>
       </Card>
