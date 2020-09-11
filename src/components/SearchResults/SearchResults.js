@@ -18,7 +18,6 @@ import {
   CardActions,
   CardInfoList,
   CardInfoItem,
-  CardShowDetails,
 } from './components';
 
 const SearchResults = ({ results, status }) => {
