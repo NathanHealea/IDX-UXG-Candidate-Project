@@ -50,7 +50,7 @@ const SearchResults = ({ results, status }) => {
     <Box my={2}>
       <Card>
         <CardMedia image={results.image} />
-        <CardContent>
+        <CardContent component={Box} width='100%'>
           <CardHeader
             title={results.listingPrice
               .toLocaleString('en-US', {
