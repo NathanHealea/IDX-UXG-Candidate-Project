@@ -7,6 +7,7 @@ import { CardMedia, withStyles } from '@material-ui/core';
 
 export default withStyles((theme) => ({
   root: {
+    position: 'relative',
     backgroundColor: theme.palette.text.secondary,
     width: 'calc(100%/ 2)',
     paddingTop: 'calc((9/16) * (100%/ 2))',

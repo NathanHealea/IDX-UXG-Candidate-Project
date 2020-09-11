@@ -18,6 +18,7 @@ import {
   CardActions,
   CardInfoList,
   CardInfoItem,
+  CardMap,
 } from './components';
 
 const SearchResults = ({ results, status }) => {
@@ -48,7 +49,9 @@ const SearchResults = ({ results, status }) => {
   return results.map((results) => (
     <Box my={2}>
       <Card>
-        <CardMedia image={results.image} />
+        <CardMedia image={results.image}>
+          <CardMap lat={results.latitude} lng={results.longitude} />
+        </CardMedia>
         <CardContent component={Box} width='100%'>
           <CardHeader
             title={results.listingPrice
@@ -59,6 +62,7 @@ const SearchResults = ({ results, status }) => {
               .replace('.00', '')}
             subheader={results.address}
           />
+
           <CardInfoList>
             <CardInfoItem
               icon={BedIcon}
