@@ -12,6 +12,7 @@ import {
 
 // -- Material Ui --- //
 import { Container } from '@material-ui/core';
+
 // --- Components --- //
 import { SearchResults, SearchInput } from './components';
 
