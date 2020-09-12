@@ -4,7 +4,7 @@ by Nathan Healea
 
 ## Design Decision
 
-My main focus was to ensure that the site was responsive and smoothy transition between different screens size as required by April user story. Tom wanted to be able to quickly, at-a-glance, look at listing that he was interested in. Information was displayed in a minimal fashion using icons to quickly digest information. The over all component design was to be minimal with a accent color, gree, to draw user attention to action item (ie. Map display and contact information).
+My main focus of my design was to ensure that the site was responsive and smoothy transition between different screens size as required by April user story. Tom wanted to be able to quickly, at-a-glance, look at listing that he was interested in. Information was displayed in a minimal fashion using icons to quickly digest information. The over all component design was to be minimal with an accent color, green, to draw user attention to action items (ie. Map display and contact information).
 
 ## Project Details
 
@@ -78,7 +78,7 @@ $ yarn build
 
 #### **Run Application (Production Mode)**
 
-Install serve globally ` yarn global add serve`
+Install serve globally ` yarn global add serve` or `npm install -g serve`
 
 ```bash
 server -s build
