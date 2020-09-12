@@ -1,6 +1,5 @@
 // --- Package Imports --- //
 import React from 'react';
-import PropTypes from 'prop-types';
 
 // --- Material Ui --- //
 import { TextField, InputAdornment } from '@material-ui/core';

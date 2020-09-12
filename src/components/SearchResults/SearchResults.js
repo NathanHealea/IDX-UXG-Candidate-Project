@@ -10,7 +10,6 @@ import {
   CardContent,
   Button,
   Box,
-  Link,
   Typography,
   CircularProgress,
 } from '@material-ui/core';
@@ -69,14 +68,14 @@ const SearchResults = ({ results, status }) => {
   }
 
   return results.map((results) => (
-    <Box my={2}>
+    <Box my={2} key={results._id}>
       <Card>
         <CardMedia image={results.image}>
           <CardMap lat={results.latitude} lng={results.longitude} />
         </CardMedia>
         <CardContent component={Box} width='100%'>
           {results.isFavorite ? (
-            <Typography variant='overview' component='p' color='primary'>
+            <Typography variant='overline' component='p' color='primary'>
               Featured
             </Typography>
           ) : (

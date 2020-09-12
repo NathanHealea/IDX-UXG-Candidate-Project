@@ -53,7 +53,7 @@ const CardMap = ({ lat, lng, zoom: defaultZoom = 13 }) => {
         </Fab>
       </MapIconWrapper>
       <Fade in={showMap}>
-        <MapWrapper display={showMap}>
+        <MapWrapper>
           <Map center={position} zoom={zoom} className={classes.map}>
             <TileLayer
               attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
