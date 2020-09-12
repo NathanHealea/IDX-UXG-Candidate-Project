@@ -6,10 +6,19 @@ import PropTypes from 'prop-types';
 import { types as ListingTypes } from 'store/Listing';
 
 // --- Material ui --- //
-import { CardContent, Button, Box, Link } from '@material-ui/core';
+import {
+  CardContent,
+  Button,
+  Box,
+  Link,
+  Typography,
+  CircularProgress,
+} from '@material-ui/core';
 import { default as BedIcon } from '@material-ui/icons/SingleBedOutlined';
 import BathtubIcon from '@material-ui/icons/BathtubOutlined';
 import { default as SquareFootIcon } from '@material-ui/icons/HomeWorkOutlined';
+import ErrorIcon from '@material-ui/icons/Error';
+
 // --- Components --- //
 import {
   Card,
@@ -23,27 +32,40 @@ import {
 
 const SearchResults = ({ results, status }) => {
   /**
-   * Returns no data to display message
-   */
-  if (status === ListingTypes.STATUS_INIT || results.length === 0) {
-    return 'No data found';
-  }
-
-  /**
    * Returns loading indicator
    */
   if (
+    status === ListingTypes.STATUS_INIT ||
     status === ListingTypes.STATUS_FETCHING ||
     status === ListingTypes.STATUS_UPDATING
   ) {
-    return 'loading';
+    return (
+      <Box textAlign='center' borderRadius={8} padding={8}>
+        <CircularProgress />
+        <Typography>loading...</Typography>
+      </Box>
+    );
   }
 
   /**
    * Returns Error indicator
    */
   if (status === ListingTypes.STATUS_ERROR) {
-    return 'Error';
+    return (
+      <Box
+        bgcolor={'error.light'}
+        color={'common.white'}
+        textAlign='center'
+        borderRadius={8}
+        padding={8}
+      >
+        <ErrorIcon fontSize='large' />
+        <Typography>Error</Typography>
+        <Typography variant='overline' component='p'>
+          Information could not be displayed
+        </Typography>
+      </Box>
+    );
   }
 
   return results.map((results) => (
@@ -53,6 +75,13 @@ const SearchResults = ({ results, status }) => {
           <CardMap lat={results.latitude} lng={results.longitude} />
         </CardMedia>
         <CardContent component={Box} width='100%'>
+          {results.isFavorite ? (
+            <Typography variant='overview' component='p' color='primary'>
+              Featured
+            </Typography>
+          ) : (
+            ''
+          )}
           <CardHeader
             title={results.listingPrice
               .toLocaleString('en-US', {
